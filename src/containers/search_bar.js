@@ -13,9 +13,15 @@ export default class SeaerchBar extends Component{
     this.setState({ term: event.target.value });
   }
 
+  onFormSubmit(event){
+    event.preventDefault();
+
+    //we need to go and fetch weather data
+  }
+
   render(){
     return (
-    <form className="input-group">
+    <form onSubmit={this.onFormSubmit} className="input-group">
       <input 
         placeholder="Get afive-day forecast in your faavorite cities"
         className="form-control"
